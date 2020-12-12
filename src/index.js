@@ -1,4 +1,5 @@
-import "regenerator-runtime";
-import main from "./App";
+import 'regenerator-runtime';
+import './styles.css';
+import main from './App';
 
 main();
