@@ -1,4 +1,5 @@
 dependencies:
+  '@ffmpeg/ffmpeg': 0.9.6
   autoprefixer: 10.1.0_postcss@8.2.1
   lodash: 4.17.20
   regenerator-runtime: 0.13.7
@@ -939,6 +940,17 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
+  /@ffmpeg/ffmpeg/0.9.6:
+    dependencies:
+      is-url: 1.2.4
+      node-fetch: 2.6.1
+      regenerator-runtime: 0.13.7
+      resolve-url: 0.2.1
+    dev: false
+    engines:
+      node: '>=12.16.1'
+    resolution:
+      integrity: sha512-ov5FAV3dHRJ/+ZxQH9V5GvY/iczwq5vrKWeu4tpytxZewTSAhZ1aKD/sFBzd79nQNF+CTktxUp3LWuGECXBNeA==
   /@fullhuman/postcss-purgecss/3.0.0:
     dependencies:
       postcss: 7.0.32
@@ -3386,6 +3398,10 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-OwijhaRSgqvhm/0ZdAcXNZt9lYdKFpcRDT5ULUuYXPoT794UNOdU+gpT6Rzo7b4V2HUl/op6GqY894AZwv9faQ==
+  /is-url/1.2.4:
+    dev: false
+    resolution:
+      integrity: sha512-ITvGim8FhRiYe4IQ5uHSkj7pVaPDrCTkNd3yq3cV7iZAcJdHTUMPMEHcqSOy9xZ9qFenQCvi+2wjH9a1nXqHww==
   /is-windows/1.0.2:
     dev: true
     engines:
@@ -3862,6 +3878,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Yt3384If5H6BYGVHiHwTL+99OzJKHhgp82S8/dktEK73T26BazdgZ4JZh92xSVtGNJvz9UbXdNAc5hcrXV42vw==
+  /node-fetch/2.6.1:
+    dev: false
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
   /node-forge/0.10.0:
     dev: true
     engines:
@@ -5035,7 +5057,6 @@ packages:
       integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
   /resolve-url/0.2.1:
     deprecated: 'https://github.com/lydell/resolve-url#deprecated'
-    dev: true
     resolution:
       integrity: sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
   /resolve/1.19.0:
@@ -6170,6 +6191,7 @@ packages:
 specifiers:
   '@babel/core': ^7.12.10
   '@babel/preset-env': ^7.12.10
+  '@ffmpeg/ffmpeg': ^0.9.6
   autoprefixer: ^10.1.0
   babel-loader: ^8.2.2
   css-loader: ^5.0.1

@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mp3 Converter</title>
   </head>
-  <body class="bg-gray-800 flex items-center justify-center">
-    <div class="bg-white rounded-lg p-4 shadow mt-24">
-        <h1 class="font-bold text-gray-900">Your new tailwind css site<h1>
-        <p class="text-gray-700">Create something cool!</p>
-    </div>
-</body>
+  <body class="bg-blue-900">
+    <h1 class="text-white">Upload your video</h1>
+    <audio controls>
+      <source id="output-music" type="audio/mpeg" />
+    </audio>
+    <input type="file" id="uploader" />
+    <p id="message" class="text-white"></p>
+  </body>
 </html>
