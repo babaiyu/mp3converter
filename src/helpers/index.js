@@ -3,4 +3,9 @@ const regexFile = (txt) => {
   return result;
 };
 
-export {regexFile};
+const removeSpaceName = (txt) => {
+  const result = txt.replace(' ', '_');
+  return result;
+};
+
+export {regexFile, removeSpaceName};

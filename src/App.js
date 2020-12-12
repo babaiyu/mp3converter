@@ -1,5 +1,5 @@
 import {createFFmpeg, fetchFile} from '@ffmpeg/ffmpeg';
-import {regexFile} from './helpers';
+import {regexFile, removeSpaceName} from './helpers';
 
 const message = document.getElementById('message');
 
@@ -13,13 +13,14 @@ function main() {
   const transcode = async ({target: {files}}) => {
     const {name} = files[0];
     const fileName = regexFile(name);
+    const realName = removeSpaceName(name);
     message.innerHTML = 'Loading ffmpeg-core.js';
     await ffmpeg.load();
     message.innerHTML = 'Start transcoding';
     ffmpeg.FS('writeFile', name, await fetchFile(files[0]));
-    await ffmpeg.run('-i', name, `${fileName}.mp3`);
+    await ffmpeg.run('-i', name, `${realName}.mp3`);
     message.innerHTML = 'Complete transcoding';
-    const data = ffmpeg.FS('readFile', `${fileName}.mp3`);
+    const data = ffmpeg.FS('readFile', `${realName}.mp3`);
 
     const audio = document.getElementById('output-music');
     const fileReadyDownload = URL.createObjectURL(
