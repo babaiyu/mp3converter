@@ -9,17 +9,19 @@ function main() {
       message.innerHTML = `Complete: ${(ratio * 100.0).toFixed(2)}%`;
     },
   });
-
+  
   const transcode = async ({target: {files}}) => {
+    document.getElementById('load').style.visibility = 'visible';
     const {name} = files[0];
     const fileName = regexFile(name);
     const realName = removeSpaceName(name);
     message.innerHTML = 'Loading ffmpeg-core.js';
     await ffmpeg.load();
-    message.innerHTML = 'Start transcoding';
+    message.innerHTML = 'Working on to refresh Your Ears!!';
     ffmpeg.FS('writeFile', name, await fetchFile(files[0]));
     await ffmpeg.run('-i', name, `${realName}.mp3`);
-    message.innerHTML = 'Complete transcoding';
+    message.innerHTML = 'Downloading Your Song......';
+    location.reload();
     const data = ffmpeg.FS('readFile', `${realName}.mp3`);
 
     const audio = document.getElementById('output-music');
@@ -43,5 +45,13 @@ function main() {
     btnTranscode.addEventListener('change', transcode);
   });
 }
+let spinnerWrapper = document.querySelector('.spinner-wrapper');
+
+    window.addEventListener('load', function () {
+      
+      spinnerWrapper.parentElement.removeChild(spinnerWrapper);
+    });
+
+
 
 export default main;
