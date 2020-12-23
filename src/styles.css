@@ -23,8 +23,14 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: space-between; */
-  padding: 50px 100px;
+
+  padding: 50px 150px;
+  border: 5px dotted #2196f3;
+  transition: border-width 0.6s linear;
+}
+.upload-container:hover {
+  margin-top: -1px;
+  border-width: 10px;
 }
 .drop-zone {
   width: 500px;
@@ -41,11 +47,22 @@ main {
 .icon-container {
   width: 100px;
   height: 100px;
-  left: 30%;
+  left: 25%;
   position: absolute;
-  border: 1px solid grey;
   border-radius: 10px;
   padding: 15px;
+}
+.arrow-container {
+  position: absolute;
+  left: 38%;
+}
+.audio-container {
+  position: absolute;
+  left: 48%;
+}
+.arrow,
+.file-audio {
+  color: #2196f3;
 }
 .head-text {
   margin-bottom: 25px;
@@ -93,4 +110,100 @@ main {
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.video-icon {
+  color: #2196f3;
+}
+/* Animation */
+#load {
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  top: 75%;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vh;
+  background: #000;
+}
+svg {
+  position: absolute;
+  width: 400px;
+  fill: none;
+}
+
+svg path {
+  d: path('M0,25 C150,110 150,-60 300,25');
+  stroke: #2196f3;
+  stroke-width: 50;
+  stroke-linecap: round;
+  transform: translate(50px, 50%);
+  animation: animate 2s ease-in-out infinite;
+}
+@keyframes animate {
+  0% {
+    stroke: #229afc;
+    d: path('M0,25 C150,110 150,-60 300,25');
+  }
+  50% {
+    stroke: #aad9ff;
+    d: path('M0,25 C160,-50 140,110 300,25');
+  }
+}
+/* Loader */
+.spinner-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #151515;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.spinner::before,
+.spinner:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.spinner:before {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, #ff00cc 0%, #333399 100%);
+  animation: spin 0.5s infinite linear;
+}
+.spinner:after {
+  width: 90%;
+  height: 90%;
+  background-color: #151515;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Simulate page content*/
+.main-content {
+  width: 100%;
+  height: 100vh;
+  background: url('https://source.unsplash.com/random/4000x4000') center
+    no-repeat;
+  background-size: cover;
 }
