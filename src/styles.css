@@ -3,11 +3,9 @@
 @import 'tailwindcss/utilities';
 
 .nav {
-  background: #0288d147;
   width: 100%;
   padding: 20px 15px;
   display: flex;
-  margin: ;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

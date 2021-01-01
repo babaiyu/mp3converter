@@ -45,6 +45,7 @@ function main() {
     btnTranscode.addEventListener('change', transcode);
   });
 }
+
 let spinnerWrapper = document.querySelector('.spinner-wrapper');
 
     window.addEventListener('load', function () {
