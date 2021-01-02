@@ -8,3 +8,4 @@ Want to contribute this project? There are a few things you need to know.
 
 ### You can add yourself as contributors from list below
 * [babaiyu](https://github.com/babaiyu) - Owner
+* [nikunj2001](https://github.com/nikunj2001) - Contributor
